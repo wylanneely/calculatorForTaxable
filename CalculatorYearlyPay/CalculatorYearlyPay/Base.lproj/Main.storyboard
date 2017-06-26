@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uT8-lY-OVg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Money Love-->
+        <scene sceneID="Sq1-2h-U2r">
+            <objects>
+                <viewController id="yPN-AX-MAE" customClass="TaxedIncomeViewController" customModule="CalculatorYearlyPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T0a-s7-bH0"/>
+                        <viewControllerLayoutGuide type="bottom" id="i5f-ZP-NqE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8r3-1k-afM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Per Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-4v-819">
+                                <rect key="frame" x="59" y="285.5" width="256" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="85b-XW-JZB"/>
+                                    <constraint firstAttribute="height" constant="96" id="bCi-4D-DkD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount per Hour" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PPu-ZA-UNb">
+                                <rect key="frame" x="121.5" y="122" width="132" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xF-Ql-6lj">
+                                <rect key="frame" x="75" y="160" width="225" height="30"/>
+                                <state key="normal" title="How Much Would I Make A Year?"/>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="yPN-AX-MAE" eventType="touchUpInside" id="AqW-OF-dlo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5xF-Ql-6lj" firstAttribute="top" secondItem="PPu-ZA-UNb" secondAttribute="bottom" constant="8" id="7um-bX-QA0"/>
+                            <constraint firstItem="wZ7-4v-819" firstAttribute="centerX" secondItem="8r3-1k-afM" secondAttribute="centerX" id="9p5-hC-PAJ"/>
+                            <constraint firstItem="PPu-ZA-UNb" firstAttribute="top" secondItem="T0a-s7-bH0" secondAttribute="bottom" constant="58" id="MIC-Jc-4GD"/>
+                            <constraint firstItem="5xF-Ql-6lj" firstAttribute="centerX" secondItem="8r3-1k-afM" secondAttribute="centerX" id="elT-Vc-7xv"/>
+                            <constraint firstItem="wZ7-4v-819" firstAttribute="centerY" secondItem="8r3-1k-afM" secondAttribute="centerY" id="oZd-H6-XT6"/>
+                            <constraint firstItem="PPu-ZA-UNb" firstAttribute="centerX" secondItem="8r3-1k-afM" secondAttribute="centerX" id="omD-BT-XtA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Money Love" id="8Sy-nu-i9Y"/>
+                    <connections>
+                        <outlet property="houlryRateTextField" destination="PPu-ZA-UNb" id="ZPi-Yl-6fc"/>
+                        <outlet property="moneyAfterTaxesLabel" destination="wZ7-4v-819" id="rhn-cO-JFr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Jt-t4-ADT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143.2" y="100.29985007496252"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BBg-Po-SBd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uT8-lY-OVg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f74-XB-QM1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yPN-AX-MAE" kind="relationship" relationship="rootViewController" id="kof-3N-OXS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQF-rF-gyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="100.29985007496252"/>
+        </scene>
+    </scenes>
+</document>
