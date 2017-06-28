@@ -10,28 +10,58 @@ import UIKit
 
 class TaxedIncomeViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
     
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    var isSalary = false
     
     @IBOutlet weak var houlryRateTextField: UITextField!
     @IBOutlet weak var moneyAfterTaxesLabel: UILabel!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    @IBOutlet weak var salaryButtonLabel: UIButton!
+    @IBOutlet weak var moneyOwed: UILabel!
+    
+    @IBAction func salaryHourlyButtonTapped(_ sender: Any) {
+        if isSalary == false {
+            isSalary = true
+            self.houlryRateTextField.placeholder = "Enter Years Salary..."
+            self.salaryButtonLabel.setTitle("Salary", for: .normal)
+            return
+        }
+        if isSalary == true {
+            isSalary = false
+            self.houlryRateTextField.placeholder = "Enter Hourly Rate"
+            self.salaryButtonLabel.setTitle("Hourly", for: .normal)
+            return
+        }
     }
-
+    
     @IBAction func calculateButtonTapped(_ sender: Any) {
-        
-        guard let hourlyWage = houlryRateTextField.text else {return}
-        
-        guard let wageAsDouble = Double(hourlyWage) else {return}
-        
-       let yearlyPay = MoneyController.calculateYearlyPayByHourly(wage: wageAsDouble)
-        
-        moneyAfterTaxesLabel.text = "\(yearlyPay)$"
-        
-        self.houlryRateTextField.text = ""
+        if isSalary == false {
+            guard let hourlyWage = houlryRateTextField.text else {return}
+            guard let wageAsDouble = Double(hourlyWage) else {return}
+            let yearlyPay = MoneyController.calculateYearPayByHourly(wage: wageAsDouble)
+            let yearTax = MoneyController.calculateTaxByHourly(wage: wageAsDouble)
+            moneyAfterTaxesLabel.text = "\(yearlyPay) $ Keep"
+            moneyOwed.text = "\(yearTax) $ Owed"
+            disablesAutomaticKeyboardDismissal = false
+                }
+        if isSalary == true {
+            guard let hourlyWage = houlryRateTextField.text else {return}
+            guard let salaryAsDouble = Double(hourlyWage) else {return}
+            let yearlyPay = MoneyController.calculateYearlyPayWith(salary: salaryAsDouble)
+            let yearTax = MoneyController.calculateTaxAmountWith(salary: salaryAsDouble)
+            moneyAfterTaxesLabel.text = "\(yearlyPay) $ Keep"
+            moneyOwed.text = "\(yearTax) $ Owed"
+            disablesAutomaticKeyboardDismissal = false
+        }
         
     }
-
+    
 }
