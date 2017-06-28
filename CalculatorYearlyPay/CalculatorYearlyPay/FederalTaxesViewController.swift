@@ -33,19 +33,22 @@ class FederalTaxesViewController: UIViewController {
         moneyKeptLabel.textColor = .green
         moneyOwedLabel.textColor = .red
         
+        
         //Create Button Actions
         
         hourOrSalaryButton.addTarget(self, action: #selector(hourOrSalaryButtonTapped), for: .touchUpInside)
         calculateButton.addTarget(self, action: #selector(calculateButtonTapped), for: .touchUpInside)
         
         // Add Elements as subviews
-        
+        self.view.addSubview(imageView)
+        imageView.image = #imageLiteral(resourceName: "AmericanEagle")
+        imageView.contentMode = .scaleAspectFit
         self.view.addSubview(moneyTextField)
         self.view.addSubview(calculateButton)
         self.view.addSubview(hourOrSalaryButton)
         self.view.addSubview(moneyKeptLabel)
         self.view.addSubview(moneyOwedLabel)
-        self.view.addSubview(imageView)
+
     }
     
     
@@ -59,6 +62,17 @@ class FederalTaxesViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         //Contraints
+        let imageViewLeading = NSLayoutConstraint(item: imageView, attribute: .leading, relatedBy: .equal,
+                                                  toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
+        let imageViewTrailing = NSLayoutConstraint(item: imageView, attribute:.trailing , relatedBy: .equal,
+                                                  toItem: self.view, attribute:.trailing, multiplier: 1, constant: 0)
+        let imageViewTop = NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal,
+                                                  toItem: self.view, attribute: .top, multiplier: 1, constant: 0)
+        let imageViewBottom = NSLayoutConstraint(item: imageView, attribute: .bottom , relatedBy: .equal,
+                                                  toItem: self.view, attribute: .bottom, multiplier: 1, constant: 0)
+        
+        self.view.addConstraints([imageViewLeading,imageViewTrailing,imageViewTop,imageViewBottom])
+        
         
         let moneyTextHeightPosition = NSLayoutConstraint(item: moneyTextField, attribute: .top, relatedBy: .equal,
                                                    toItem: self.view, attribute: .centerY, multiplier: 0.25, constant: 0)
