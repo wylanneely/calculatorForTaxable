@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yPN-AX-MAE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HA0-L3-xt1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -84,6 +84,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Single" id="o9N-Rv-Sf9"/>
                     <connections>
+                        <outlet property="americanImage" destination="QHm-1f-reF" id="XmG-kw-bcq"/>
                         <outlet property="houlryRateTextField" destination="PPu-ZA-UNb" id="ZPi-Yl-6fc"/>
                         <outlet property="moneyAfterTaxesLabel" destination="wZ7-4v-819" id="rhn-cO-JFr"/>
                         <outlet property="moneyOwed" destination="fLO-Ax-vYB" id="zZe-Jc-IQu"/>
@@ -93,6 +94,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jt-t4-ADT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3021.5999999999999" y="100.29985007496252"/>
+        </scene>
+        <!--Federal Taxes View Controller-->
+        <scene sceneID="C4y-Wn-tJy">
+            <objects>
+                <viewController id="HA0-L3-xt1" customClass="FederalTaxesViewController" customModule="CalculatorYearlyPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DQQ-vb-opi"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Av-WC-hdI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jfw-D5-qbv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5B-J9-iua" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3922" y="96"/>
         </scene>
     </scenes>
     <resources>

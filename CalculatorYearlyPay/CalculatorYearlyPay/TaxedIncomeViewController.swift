@@ -8,12 +8,29 @@
 
 import UIKit
 
+extension UIImage{
+    
+    func alpha(_ value:CGFloat)->UIImage
+    {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(at: CGPoint.zero, blendMode: .normal, alpha: value)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+        
+    }
+}
+
 class TaxedIncomeViewController: UIViewController {
+    
+    @IBOutlet weak var americanImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        americanImage.image = #imageLiteral(resourceName: "AmericanEagle").alpha(0.5)
+        
     }
     
     func dismissKeyboard() {
@@ -26,6 +43,7 @@ class TaxedIncomeViewController: UIViewController {
     @IBOutlet weak var moneyAfterTaxesLabel: UILabel!
     @IBOutlet weak var salaryButtonLabel: UIButton!
     @IBOutlet weak var moneyOwed: UILabel!
+    
     
     @IBAction func salaryHourlyButtonTapped(_ sender: Any) {
         if isSalary == false {

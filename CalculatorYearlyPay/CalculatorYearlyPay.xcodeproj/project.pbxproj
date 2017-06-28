@@ -10,6 +10,7 @@
 		B22D6F4B1ED8DDE6007E222D /* Wage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D6F4A1ED8DDE6007E222D /* Wage.swift */; };
 		B22D6F4D1ED8E76C007E222D /* MoneyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D6F4C1ED8E76C007E222D /* MoneyController.swift */; };
 		B239B7F51F01B43200E1162F /* TaxedIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239B7F41F01B43200E1162F /* TaxedIncomeViewController.swift */; };
+		B24C9D811F0351CE00CCF238 /* FederalTaxesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24C9D801F0351CE00CCF238 /* FederalTaxesViewController.swift */; };
 		B2B2FC841ED8D6CD0095D66E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2FC831ED8D6CD0095D66E /* AppDelegate.swift */; };
 		B2B2FC891ED8D6CD0095D66E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2FC871ED8D6CD0095D66E /* Main.storyboard */; };
 		B2B2FC8B1ED8D6CD0095D66E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2FC8A1ED8D6CD0095D66E /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		B22D6F4A1ED8DDE6007E222D /* Wage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wage.swift; sourceTree = "<group>"; };
 		B22D6F4C1ED8E76C007E222D /* MoneyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyController.swift; sourceTree = "<group>"; };
 		B239B7F41F01B43200E1162F /* TaxedIncomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxedIncomeViewController.swift; sourceTree = "<group>"; };
+		B24C9D801F0351CE00CCF238 /* FederalTaxesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FederalTaxesViewController.swift; sourceTree = "<group>"; };
 		B2B2FC801ED8D6CD0095D66E /* CalculatorYearlyPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorYearlyPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B2FC831ED8D6CD0095D66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2B2FC881ED8D6CD0095D66E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				B239B7F41F01B43200E1162F /* TaxedIncomeViewController.swift */,
+				B24C9D801F0351CE00CCF238 /* FederalTaxesViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24C9D811F0351CE00CCF238 /* FederalTaxesViewController.swift in Sources */,
 				B22D6F4B1ED8DDE6007E222D /* Wage.swift in Sources */,
 				B2B2FC841ED8D6CD0095D66E /* AppDelegate.swift in Sources */,
 				B239B7F51F01B43200E1162F /* TaxedIncomeViewController.swift in Sources */,
