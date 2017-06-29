@@ -10,9 +10,8 @@ import Foundation
 import AVFoundation
 
 struct EagleSoundController {
-    
+
     let eagleSoundPath = Bundle.main.path(forResource: "Hawk-sound", ofType: "mp3")
-    
     var soundPlayer:AVAudioPlayer = AVAudioPlayer()
     
     mutating func playEagleSound() {
@@ -21,17 +20,5 @@ struct EagleSoundController {
             try soundPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: soundPath) as URL, fileTypeHint: "mp3")
             soundPlayer.play()
         } catch {}
-        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

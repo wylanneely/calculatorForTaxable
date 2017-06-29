@@ -40,6 +40,7 @@ class FederalTaxesViewController: UIViewController {
         moneyTextField.textColor = UIColor.white
         moneyTextField.adjustsFontSizeToFitWidth = true
         moneyTextField.keyboardType = .decimalPad
+        moneyTextField.placeHolderColor = UIColor.lightText
         
         
         
@@ -49,7 +50,7 @@ class FederalTaxesViewController: UIViewController {
         calculateButton.setTitle("Calculate Tax", for: .normal)
         calculateButton.setTitleColor(.black, for: .normal)
         
-        moneyKeptLabel.textColor = .green
+        moneyKeptLabel.textColor = UIColor(hue: 1.28, saturation: 1.0, brightness: 0.74, alpha: 1.0)
         moneyOwedLabel.textColor = .red
         
         
@@ -60,7 +61,7 @@ class FederalTaxesViewController: UIViewController {
         
         // Add Elements as subviews
         self.view.addSubview(imageView)
-        imageView.image = #imageLiteral(resourceName: "AmericanEagle").alpha(0.65)
+        imageView.image = #imageLiteral(resourceName: "AmericanEagle").alpha(0.73)
         imageView.contentMode = .scaleAspectFit
         self.view.addSubview(moneyTextField)
         self.view.addSubview(calculateButton)
@@ -252,3 +253,24 @@ extension UIImage{
         
     }
 }
+extension UIColor {
+    var darkGreen: UIColor {
+        let color = UIColor(red: 0, green: 192, blue: 13, alpha: 1.0)
+        return color
+    }
+}
+
+extension UITextField{
+    @IBInspectable var placeHolderColor: UIColor? {
+        get {
+            return self.placeHolderColor
+        }
+        set {
+            self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSForegroundColorAttributeName: newValue!])
+        }
+    }
+}
+
+
+
+
