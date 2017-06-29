@@ -8,18 +8,6 @@
 
 import UIKit
 
-extension UIImage{
-    
-    func alpha(_ value:CGFloat)->UIImage
-    {
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        draw(at: CGPoint.zero, blendMode: .normal, alpha: value)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage!
-        
-    }
-}
 
 class TaxedIncomeViewController: UIViewController {
     
@@ -29,7 +17,7 @@ class TaxedIncomeViewController: UIViewController {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        americanImage.image = #imageLiteral(resourceName: "AmericanEagle").alpha(0.5)
+        americanImage.image = #imageLiteral(resourceName: "AmericanEagle").alpha(0.9)
         
     }
     
@@ -68,7 +56,7 @@ class TaxedIncomeViewController: UIViewController {
             let yearTax = MoneyController.calculateTaxByHourly(wage: wageAsDouble)
             moneyAfterTaxesLabel.text = "\(yearlyPay) $ Keep"
             moneyOwed.text = "\(yearTax) $ Owed"
-            disablesAutomaticKeyboardDismissal = false
+          //  disablesAutomaticKeyboardDismissal = false
                 }
         if isSalary == true {
             guard let hourlyWage = houlryRateTextField.text else {return}
@@ -77,7 +65,7 @@ class TaxedIncomeViewController: UIViewController {
             let yearTax = MoneyController.calculateTaxAmountWith(salary: salaryAsDouble)
             moneyAfterTaxesLabel.text = "\(yearlyPay) $ Keep"
             moneyOwed.text = "\(yearTax) $ Owed"
-            disablesAutomaticKeyboardDismissal = false
+           // disablesAutomaticKeyboardDismissal = false
         }
         
     }

@@ -12,6 +12,14 @@ class MoneyController {
     
     static var shared = MoneyController()
     
+    
+   static func hoursToSalary(wage: Double) -> Double{
+        return wage * 2080
+    }
+    
+   static func salaryToHourly(wage: Double) -> Int{
+        return Int(wage / 2080)
+    }
   
    static func calculateYearPayByHourly(wage: Double) -> Double {
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21E6FC71F05630000CFA453 /* Hawk-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B21E6FC61F05630000CFA453 /* Hawk-sound.mp3 */; };
+		B21E6FC91F05632600CFA453 /* EagleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21E6FC81F05632600CFA453 /* EagleSound.swift */; };
 		B22D6F4B1ED8DDE6007E222D /* Wage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D6F4A1ED8DDE6007E222D /* Wage.swift */; };
 		B22D6F4D1ED8E76C007E222D /* MoneyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D6F4C1ED8E76C007E222D /* MoneyController.swift */; };
 		B239B7F51F01B43200E1162F /* TaxedIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239B7F41F01B43200E1162F /* TaxedIncomeViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B21E6FC61F05630000CFA453 /* Hawk-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Hawk-sound.mp3"; path = "../../../../Hawk-sound/Hawk-sound.mp3"; sourceTree = "<group>"; };
+		B21E6FC81F05632600CFA453 /* EagleSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EagleSound.swift; sourceTree = "<group>"; };
 		B22D6F4A1ED8DDE6007E222D /* Wage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wage.swift; sourceTree = "<group>"; };
 		B22D6F4C1ED8E76C007E222D /* MoneyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyController.swift; sourceTree = "<group>"; };
 		B239B7F41F01B43200E1162F /* TaxedIncomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxedIncomeViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				B22D6F4A1ED8DDE6007E222D /* Wage.swift */,
+				B21E6FC81F05632600CFA453 /* EagleSound.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 				B22D6F461ED8DD24007E222D /* Model */,
 				B2B2FC831ED8D6CD0095D66E /* AppDelegate.swift */,
 				B2B2FC8A1ED8D6CD0095D66E /* Assets.xcassets */,
+				B21E6FC61F05630000CFA453 /* Hawk-sound.mp3 */,
 				B2B2FC8C1ED8D6CD0095D66E /* LaunchScreen.storyboard */,
 				B2B2FC8F1ED8D6CD0095D66E /* Info.plist */,
 			);
@@ -166,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B2FC8E1ED8D6CD0095D66E /* LaunchScreen.storyboard in Resources */,
+				B21E6FC71F05630000CFA453 /* Hawk-sound.mp3 in Resources */,
 				B2B2FC8B1ED8D6CD0095D66E /* Assets.xcassets in Resources */,
 				B2B2FC891ED8D6CD0095D66E /* Main.storyboard in Resources */,
 			);
@@ -182,6 +189,7 @@
 				B22D6F4B1ED8DDE6007E222D /* Wage.swift in Sources */,
 				B2B2FC841ED8D6CD0095D66E /* AppDelegate.swift in Sources */,
 				B239B7F51F01B43200E1162F /* TaxedIncomeViewController.swift in Sources */,
+				B21E6FC91F05632600CFA453 /* EagleSound.swift in Sources */,
 				B22D6F4D1ED8E76C007E222D /* MoneyController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
