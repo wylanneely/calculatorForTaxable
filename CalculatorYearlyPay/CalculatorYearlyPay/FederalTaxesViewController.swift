@@ -222,13 +222,13 @@ class FederalTaxesViewController: UIViewController {
         view.bringSubview(toFront: sender)
         let animation = CAKeyframeAnimation()
         animation.keyPath = "position.y"
-        animation.values = [sender.frame.origin.y + sender.frame.width / 2,
-                            sender.frame.origin.y + sender.frame.width / 2 + 24,
-                            sender.frame.origin.y + sender.frame.width / 2 + 50,
-                            sender.frame.origin.y + sender.frame.width / 2 + 93,
-                            sender.frame.origin.y + sender.frame.width / 2 + 125]
+        animation.values = [sender.frame.height,
+                            sender.frame.height / 2 + 24,
+                            sender.frame.height / 2 + 50,
+                           sender.frame.height / 2 + 93,
+                            sender.frame.height / 2 + 125]
         animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
-        animation.duration = 0.9
+        animation.duration = 1.2
         sender.layer.add(animation, forKey: "fall")
         let moneyKeptHeight = NSLayoutConstraint(item: moneyKeptLabel, attribute: .top, relatedBy: .equal,
                                                  toItem: self.view, attribute: .centerY, multiplier: 1.443, constant: 0)
