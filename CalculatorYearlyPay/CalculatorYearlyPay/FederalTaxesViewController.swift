@@ -54,6 +54,7 @@ class FederalTaxesViewController: UIViewController {
         moneyOwedLabel.textColor = .red
         
         
+        
         //Create Button Actions
         
         hourOrSalaryButton.addTarget(self, action: #selector(hourOrSalaryButtonTapped), for: .touchUpInside)
@@ -82,7 +83,9 @@ class FederalTaxesViewController: UIViewController {
         moneyOwedLabel.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        let moneyKeptHeight = NSLayoutConstraint(item: moneyKeptLabel, attribute: .top, relatedBy: .equal,
+                                                 toItem: self.view, attribute: .centerY, multiplier: 1.443, constant: 0)
+        self.view.addConstraint(moneyKeptHeight)
         
         let imageViewLeading = NSLayoutConstraint(item: imageView, attribute: .leading, relatedBy: .equal,
                                                   toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
@@ -126,24 +129,24 @@ class FederalTaxesViewController: UIViewController {
         
 //        let moneyKeptHeight = NSLayoutConstraint(item: moneyKeptLabel, attribute: .top, relatedBy: .equal,
 //                                                 toItem: self.view, attribute: .centerY, multiplier: 0.9, constant: 0)
+        let moneyOwedHeight = NSLayoutConstraint(item: moneyOwedLabel, attribute: .top, relatedBy: .equal,
+                                                 toItem: self.view, attribute: .centerY, multiplier: 1.7, constant: 0)
+        self.view.addConstraint(moneyOwedHeight)
         let moneyKeptLeading = NSLayoutConstraint(item: moneyKeptLabel, attribute: .centerX , relatedBy: .equal,
                                                   toItem: self.view, attribute: .centerX, multiplier: 1, constant: 16)
         self.view.addConstraints([moneyKeptLeading])
         
         
         
-        let moneyOwedHeight = NSLayoutConstraint(item: moneyOwedLabel, attribute: .top, relatedBy: .equal,
-                                                 toItem: self.view, attribute: .centerY, multiplier: 1.7, constant: 0)
+//        let moneyOwedHeight = NSLayoutConstraint(item: moneyOwedLabel, attribute: .top, relatedBy: .equal,
+//                                                 toItem: self.view, attribute: .centerY, multiplier: 1.7, constant: 0)
         let moneyOwedLeading = NSLayoutConstraint(item: moneyOwedLabel, attribute: .centerX , relatedBy: .equal,
                                                   toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
-        self.view.addConstraints([moneyOwedHeight,moneyOwedLeading])
+        self.view.addConstraints([moneyOwedLeading])
         
 
         
     }
-
-    
-    
     
     
     //Functions
@@ -196,7 +199,8 @@ class FederalTaxesViewController: UIViewController {
             let yearTax = MoneyController.calculateTaxByHourly(wage: wageAsDouble)
             moneyKeptLabel.text = "\(yearlyPay)$"
             moneyOwedLabel.text = "\(yearTax) $ Owed"
-            labelSlide(moneyKeptLabel)
+            labelSlideDown(moneyKeptLabel)
+            labelSlideUp(moneyOwedLabel)
             eagleSound.playEagleSound()
           //  disablesAutomaticKeyboardDismissal = false
         }
@@ -207,9 +211,9 @@ class FederalTaxesViewController: UIViewController {
             let yearTax = MoneyController.calculateTaxAmountWith(salary: salaryAsDouble)
             moneyKeptLabel.text = "\(yearlyPay)$"
             moneyOwedLabel.text = "\(yearTax) $ Owed"
-            labelSlide(moneyKeptLabel)
+            labelSlideDown(moneyKeptLabel)
+            labelSlideUp(moneyOwedLabel)
             eagleSound.playEagleSound()
-
          //   disablesAutomaticKeyboardDismissal = false
     }
         self.resignFirstResponder()
@@ -217,27 +221,41 @@ class FederalTaxesViewController: UIViewController {
     
     
     
-    func labelSlide(_ sender: UILabel) {
+    func labelSlideDown(_ sender: UILabel) {
         
         view.bringSubview(toFront: sender)
         let animation = CAKeyframeAnimation()
         animation.keyPath = "position.y"
-        animation.values = [sender.frame.height,
-                            sender.frame.height / 2 + 24,
-                            sender.frame.height / 2 + 50,
-                           sender.frame.height / 2 + 93,
-                            sender.frame.height / 2 + 125]
-        animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
+        animation.values = [sender.frame.height ,
+                            sender.frame.height  + 766,
+                ]
+        animation.keyTimes = [0, 1.6]
         animation.duration = 1.2
         sender.layer.add(animation, forKey: "fall")
         let moneyKeptHeight = NSLayoutConstraint(item: moneyKeptLabel, attribute: .top, relatedBy: .equal,
                                                  toItem: self.view, attribute: .centerY, multiplier: 1.443, constant: 0)
         self.view.addConstraint(moneyKeptHeight)
+
+    }
+
+    func labelSlideUp(_ sender: UILabel) {
+        
+        view.bringSubview(toFront: sender)
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.y"
+        animation.values = [sender.frame.height + 650,
+                           sender.frame.height + 498,
+        ]
+        animation.keyTimes = [0, 1.6]
+        animation.duration = 1.2
+        sender.layer.add(animation, forKey: "rise")
+        let moneyOwedHeight = NSLayoutConstraint(item: moneyOwedLabel, attribute: .top, relatedBy: .equal,
+                                                 toItem: self.view, attribute: .centerY, multiplier: 1.7, constant: 0)
+        self.view.addConstraint(moneyOwedHeight)
         
         
         
     }
-    
 
 }
 
